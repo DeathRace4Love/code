@@ -1,0 +1,65 @@
+"""
+Module: SUM_GAME.py
+Auther: Drue Coles
+
+
+Descrpiton:
+
+    Plays the sum game: THE PLAYERS ROLLS THREE DICE AND WINS IF ONE
+    EQUALS THE SUM OF THE OTHER TWO
+
+1,2,3 w
+3,2,5 w
+1,1,2 w
+3,4,1 w
+5,1,7 L
+"""
+import random
+
+NUM_SIDES = 6
+
+
+def main() -> None:
+    print("-----------------!")
+    print('Would you like to roll the dice?')
+    user_input = input("Enter 'Y' OR 'N'")
+    if user_input == 'Y':
+        print("-----------------!")
+        print("Here are your dice rolls")
+        die1 = random.randint(1, NUM_SIDES)
+        die2 = random.randint(1, NUM_SIDES)
+        die3 = random.randint(1, NUM_SIDES)
+        print(f"Dice 1 = {die1} ")
+        print(f"Dice 2 = {die2} ")
+        print(f"Dice 3 = {die3} ")
+        print("-----------------!")
+        if die1 + die2 == die3 or die2 + die1 == die3 or die2 + die3 == die1 or die3 + die2 == die1:
+            print("congratulations!")
+            print("-----------------!")
+            main()
+        main()
+    if user_input == 'y':
+        print("-----------------!")
+        print("Here are your dice rolls")
+        die1 = random.randint(1, NUM_SIDES)
+        die2 = random.randint(1, NUM_SIDES)
+        die3 = random.randint(1, NUM_SIDES)
+        print(f"Dice 1 = {die1} ")
+        print(f"Dice 2 = {die2} ")
+        print(f"Dice 3 = {die3} ")
+        print("-----------------!")
+        if die1 + die2 == die3 or die2 + die1 == die3 or die2 + die3 == die1 or die3 + die2 == die1:
+            print("congratulations!")
+            print("-----------------!")
+            main()
+        main()
+    if user_input == 'N':
+        print("No?..Alright")
+        main()
+    if user_input == 'n':
+        print("No?..Alright")
+        main()
+
+
+if __name__ == "__main__":
+    main()
