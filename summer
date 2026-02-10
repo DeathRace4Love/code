@@ -1,0 +1,30 @@
+"""
+
+Module: fatal_fives.py
+Auther: Ethan Espitia
+
+
+Descrpiton: Calculates the sum of the consecutive positive integers up to
+a user specified limit
+
+
+"""
+
+
+
+def main() -> None:
+    limit = int(input("Enter a positive number: "))
+
+    total = 0
+    next1= 1
+    while next1 <= limit:
+        total += next1
+        next1 += 1
+    print(f"1 + 2 + 3 + 4 + .... + {limit} = {total:,}")
+
+
+
+
+
+if __name__ == "__main__":
+    main()
