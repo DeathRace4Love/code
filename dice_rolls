@@ -1,0 +1,73 @@
+"""
+Module:Dice_roller.py
+Auther: Ethan Espitia
+
+Descrpition:
+    roll 2 dice and displays the sum
+
+"""
+import random
+
+
+
+
+
+
+def main() -> None:
+    print("                   ")
+    print("-------------------")
+    print('Would you like to roll the dice?')
+    user_input = input("Enter 'Y' OR 'N'")
+    print("-------------------")
+    print("                   ")
+    if user_input == 'Y':
+        print("Here are your dice rolls")
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+        print(die1)
+        print(die2)
+        total = die1 +die2
+        print(f"you rolled {die1} + {die2} = {total}. ")
+        print("-------------------")
+        if die1 == die2 :
+            print(die1, "congratulation")
+    if user_input == 'y':
+        print("Here are your dice rolls")
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+        print(die1)
+        print(die2)
+        total = die1 +die2
+        print(f"you rolled {die1} + {die2} = {total}. ")
+        if die1 == die2 :
+            print(die1, "congratulation")
+        main()
+    if user_input == 'N':
+        print("No?..Alright")
+    if user_input == 'n':
+        print("No?..Alright")
+
+
+def ask() -> None:
+    print('Would you like to roll the dice again?')
+    user_input1 =input("Enter 'Y' OR 'N'")
+    if user_input1 == 'Y':
+        print("Bet")
+        main()
+    if user_input1 == 'y':
+        print("Bet")
+        main()
+    if user_input1 == 'n':
+        print("okay....")
+        main()
+    if user_input1 == 'N':
+        print("okay....")
+        main()
+
+while True:
+    main()
+    ask()
+    user_input1 = input
+    if user_input1 == 'Quit':
+        print("okay....")
+        Break
