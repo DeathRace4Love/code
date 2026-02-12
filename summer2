@@ -1,0 +1,30 @@
+"""
+
+Module: SUMMER2.py
+Auther: Ethan Espitia
+
+
+Descrpiton: Calculates the sum of the consecutive positive integers up to
+a user specified limit
+
+
+"""
+
+
+
+def main() -> None:
+    limit = int(input("Enter a positive number: "))
+    total = 0
+
+    #keep adding successive integers until reaching the limit
+    for next_num in range(1, limit +1):
+        total += next_num
+
+    print(f"1 + 2 + 3 + 4 + .... + {limit} = {total:,}")
+
+
+
+
+
+if __name__ == "__main__":
+    main()
