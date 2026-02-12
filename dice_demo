@@ -1,30 +1,25 @@
 """
+Module
+Auther:Ethan Espitia
 
-Module: SUMMER2.py
-Auther: Ethan Espitia
-
-
-Descrpiton: Calculates the sum of the consecutive positive integers up to
-a user specified limit
-
+Description:
+    Demonstartes using hr dice_roll function from dice_tools.py
 
 """
 
+from src.utils import dice_tools
 
 
 def main() -> None:
-    limit = int(input("Enter a positive number: "))
-    total = 0
+    print("dice demo ")
+    num_dice = int(input("Enter number of dice to roll: ") or 2)
+    num_sides = int(input("Enter number of rolls(default 6): or 2"))
 
-    #keep adding successive integers until reaching the limit
-    for next_num in range(1, limit +1):
-        total += next_num
-
-    print(f"1 + 2 + 3 + 4 + .... + {limit} = {total:,}")
-
-
-
+    total = dice_tools.roll_dice(num_dice, sides)
+    print(f"Total rolls: {num_dice} {sides}-sided dice.")
+    print(f"Total: {total}")
 
 
 if __name__ == "__main__":
     main()
+
