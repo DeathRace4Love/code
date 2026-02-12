@@ -1,0 +1,14 @@
+"""
+module: craps/py
+Auther: Ethan Espitia
+
+Description: 
+    plays the game of craps the player rolls aq pair of dice 
+    There are there possibilities for the  come-out roll:
+    (1) Natural (7 or 11) - PLayer wins.
+    (2) Craps (2, 3, 12) - PLayer loses.
+    (3) in any other case the player keeps rolling until:
+        (a) Rolling the original sum (the point) - plyer wins 
+        (b) Rolling 7 (seven out) = PLAYER LOSES. 
+    
+"""
