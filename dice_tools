@@ -1,0 +1,41 @@
+"""
+Module: dice-tools.py
+AUther: EThan Espitia
+
+
+descripition: provides simple dice related functions
+
+
+"""
+
+import random
+
+
+
+
+
+
+def roll_dice(k: int = 2, n: int = 6) -> int:
+    """
+    rolls k n-sided dice and returns the sum.
+
+    :param n: number of dice to roll
+    :type n: number of sides per die
+    :return: total sum of dice
+    """
+
+    total = 0
+    for _ in range(k):
+        total += random.randint(1, n)
+    return total
+
+
+def main() -> None:
+    print("testing dice_tools module")
+    print(f"roll_dice() + {roll_dice()}")
+    print(f"roll_dice(3, 8) + {roll_dice(3, 8)}")
+
+
+
+if __name__ == "__main__":
+    main()
