@@ -1,0 +1,43 @@
+"""
+MODULE: CRAPS_PROB.PY
+AUTHER: ETHAN ESPITIA
+DESCRPITION:
+    ESTIMATES THE CHANCES OF WINNING THE GAME VIA MONTE CARLOS SIMULATION.
+
+"""
+from src.utils import dice_tools
+
+
+def play_wins() -> bool:
+    first_roll = dice_tools.roll_dice(2, 6 )
+
+    if first_roll == 7 or first_roll == 11:
+        return True
+    elif first_roll in (2, 3, 12):
+        return False
+
+
+    new_roll = dice_tools.roll_dice(2, 6)
+    while new_roll != first_roll and new_roll != 7 :
+        new_roll = dice_tools.roll_dice()
+
+    return new_roll == first_roll
+
+
+def main() -> None:
+    num_games = 10_000_000
+    wins = 0
+
+    for _ in range(num_games):
+        if play_wins():
+            wins += 1
+    probability = wins / num_games * 100
+    print(f"Probability of winning the game of craps: {probability:.5f}%")
+
+
+
+
+
+
+if __name__ == "__main__":
+    main()
