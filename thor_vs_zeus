@@ -1,0 +1,36 @@
+"""
+MODULE: thor_vs_zeus.py
+author:ethan espitia
+description:
+    estimate4s the probability that thor beats zeus using monte carlos simulation.
+    thor has nine 4-sided dice and zeus has 6 six-sided dice
+     each rolls theirs dice and the highest summ wins.
+"""
+
+from src.utils import dice_tools
+from src.utils.dice_tools import roll_dice
+
+
+def thor_wins() -> bool:
+    thor_t = roll_dice(9,4)
+    zeus_t = roll_dice(6,6)
+    return thor_t > zeus_t
+
+
+def main() -> None:
+    num_games = 10_000_000
+    wins = 0
+
+    for _ in range(num_games):
+        if thor_wins():
+            wins += 1
+    probability = wins / num_games * 100
+    print(f"Probability of thor winning: {probability:.5f}%")
+
+
+
+
+
+
+if __name__ == "__main__":
+    main()
