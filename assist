@@ -1,0 +1,37 @@
+
+
+#estimate has ( balls, bins, trials=amount)
+#simulating ( balls,bins)
+#main(none)
+
+
+
+
+
+    # create list of bins that start at 0
+   bin_counts = [0] * bins
+
+    # chooses rabndom bin and throw ball in, // picks and bin and adds the value oone in it to indicate 1 ball in
+    for _ in range(balls):
+        chosen_bin = random.randint(0, bins - 1)
+        bin_counts[chosen_bin] += 1
+
+
+   #Assistance: its a loop that runs (the trial ammount) and adds to the total_max, which will be used to find the expected maximum load
+    for _ in range(trials):
+        total_max += simulate_once(balls, bins)
+
+
+#Assistance: searching and adding bewteen a set
+target_sums = set(range(2, 13))  # Target: {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+    seen_sums = set()
+    rolls = 0
+
+    while len(seen_sums) < len(target_sums):
+        # Roll two 6-sided dice
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+
+        # Add the sum to our set of seen results
+        seen_sums.add(die1 + die2) # adds the first and secound lines value to the seen_sums set
+        rolls += 1 # adds += to the total rolls its taking
